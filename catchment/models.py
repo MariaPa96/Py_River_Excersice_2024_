@@ -8,6 +8,8 @@ time across all sites.
 """
 
 import pandas as pd
+import numpy as np
+
 
 def read_variable_from_csv(filename):
     """Reads a named variable from a CSV file, and returns a
@@ -56,3 +58,7 @@ def daily_min(data):
     Index must be np.datetime64 compatible format."""
     return data.groupby(data.index.date).min()
 
+def data_normalise(data):
+    """Normalise any 2D data array"""
+    normal_max = np.array(np.max(data, axis=0))
+    return data/normal_max[np.newaxis, :] #newaxis enlonge the max 1D to 2D with the shape we need
