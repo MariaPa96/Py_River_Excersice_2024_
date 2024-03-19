@@ -2,7 +2,7 @@
 
 The Model layer is responsible for the 'business logic' part of the software.
 
-Catchment data is held in a Pandas dataframe (2D array) where each column contains
+Catchment data is held in a Pandas dataframe (2d array) where each column contains
 data for a single measurement site, and each row represents a single measurement
 time across all sites.
 """
